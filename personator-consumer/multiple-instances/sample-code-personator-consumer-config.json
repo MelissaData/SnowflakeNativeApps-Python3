@@ -1,0 +1,39 @@
+{
+  "warehouse": "TEST_WAREHOUSE",
+  "database": "TESTDB",
+  "schema": "MULTI_INSTANCES_TEST",
+  "actions": "Check,Append",
+  "columns": "Plus4",
+  "output_table_fields": "RecordID,Plus4,Results,MelissaAddressKey,Timestamp",
+  "duplicate_check": "FALSE",
+  "instances": [
+    {
+      "app_name": "PERSONATOR_INSTANCE_1",
+      "source_table": "IN_DB.IN_SCHEMA.ADDR_INPUT_1",
+      "output_table": "POST_INST_1",
+      "order_by": "RecordID",
+      "limit": 100
+    },
+    {
+      "app_name": "PERSONATOR_INSTANCE_2",
+      "source_table": "IN_DB.IN_SCHEMA.ADDR_INPUT_2",
+      "output_table": "POST_INST_2",
+      "order_by": "RecordID",
+      "limit": 100
+    },
+    {
+      "app_name": "PERSONATOR_INSTANCE_3",
+      "source_table": "IN_DB.IN_SCHEMA.ADDR_INPUT_3",
+      "output_table": "POST_INST_3",
+      "order_by": "RecordID",
+      "limit": 100
+    },
+    {
+      "app_name": "PERSONATOR_INSTANCE_4",
+      "source_table": "IN_DB.IN_SCHEMA.ADDR_INPUT_4",
+      "output_table": "POST_INST_4",
+      "order_by": "RecordID",
+      "limit": 100
+    }
+  ]
+}
