@@ -1,4 +1,4 @@
-# Native App Personator Consumer Sample Code <!-- omit in toc -->
+# Native App Global Address Verification Sample Code <!-- omit in toc -->
 - [Overview](#overview)
 - [Requirements](#requirements)
   - [Environments](#environments)
@@ -15,12 +15,12 @@
 - [Contact us](#contact-us)
 
 ## Overview
-The sample code showcase features of Melissa's Native App Personator Consumer in Snowflake.
+The sample codes showcase features of Melissa's Native App Global Address Verification in Snowflake.
 
 Please feel free to copy or embed this code to your own project. Happy coding!
 
-- [Native App Personator Consumer release notes](https://releasenotes.melissa.com/software-integrations/native-app-personator-consumer-snowflake/)
-- [Native App Personator Consumer documentations](https://docs.melissa.com/software/native-app-personator-consumer-for-snowflake/native-app-personator-consumer-for-snowflake-index.html)
+- [Native App Global Address Verification release notes](https://releasenotes.melissa.com/software-integrations/native-app-global-address-verification-snowflake/)
+- [Native App Global Address Verification documentations](https://docs.melissa.com/software/native-app-global-address-verification-for-snowflake/native-app-global-address-verification-for-snowflake-index.html#gav-snowflake-index)
 
 ## Requirements
 ### Environments

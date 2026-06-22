@@ -1,5 +1,5 @@
 """
-Personator Consumer Multiple Instances Sample Job
+Global Address Verification Multiple Instances Sample Job
 
 Usage:
     python path/to/your/script.py --config path/to/your/config.json
@@ -39,12 +39,12 @@ logger.addHandler(_fileHandler)
 # ──────────────────────────────────────────────────────
 # Parse arguments & load config from JSON
 # ──────────────────────────────────────────────────────
-parser = argparse.ArgumentParser(description="Personator Consumer Multiple Instances Sample Job")
+parser = argparse.ArgumentParser(description="Global Address Verification Multiple Instances Sample Job")
 parser.add_argument(
     "--config",
     type=Path,
-    default=Path(__file__).parent / "sample-code-personator-consumer-config.json",
-    help="Path to the JSON config file (default: sample-code-personator-consumer-config.json)",
+    default=Path(__file__).parent / "sample-code-global-address-verification-config.json",
+    help="Path to the JSON config file (default: sample-code-global-address-verification-config.json)",
 )
 args = parser.parse_args()
 
@@ -55,9 +55,7 @@ with open(CONFIG_PATH, encoding="utf-8") as f:
 WAREHOUSE           = CONFIG["warehouse"]
 DATABASE            = CONFIG["database"]
 SCHEMA              = CONFIG["schema"]
-ACTIONS             = CONFIG["actions"]
 OPTIONS             = CONFIG["options"]
-COLUMNS             = CONFIG["columns"]
 OUTPUT_TABLE_FIELDS = CONFIG["output_table_fields"]
 DUPLICATE_CHECK     = CONFIG["duplicate_check"]
 INSTANCES           = CONFIG["instances"]
@@ -81,6 +79,7 @@ def run_batch_job(session: Session, job_name: str, instance: dict) -> dict:
     app = instance["app_name"]
     input_table = instance["source_table"]
     output_table_name = instance["output_table_name"]
+    output_table_fields = OUTPUT_TABLE_FIELDS
     order = instance["order_by"]
     limit = instance["limit"]
 
@@ -109,14 +108,12 @@ def run_batch_job(session: Session, job_name: str, instance: dict) -> dict:
 
     # Call the stored procedure
     call_batch_job_sql = f"""
-    CALL {app}.CORE.CHECK_MULTIPLE_CONTACTS(
+    CALL {app}.CORE.VERIFY_MULTIPLE_ADDRESSES(
          LICENSE                => '<REPLACE_WITH_YOUR_LICENSE_KEY>'
         ,INPUT_TABLE_NAME       => TABLE({app}.CORE.INPUT_RECORDS)
         ,OUTPUT_TABLE_NAME      => '{output_table_name}'
-        ,OUTPUT_TABLE_FIELDS    => '{OUTPUT_TABLE_FIELDS}'
-        ,ACTIONS                => '{ACTIONS}'
+        ,OUTPUT_TABLE_FIELDS    => '{output_table_fields}'
         ,OPTIONS                => '{OPTIONS}'
-        ,COLUMNS                => '{COLUMNS}'
         ,DUPLICATE_CHECK        => '{DUPLICATE_CHECK}'
     )
     """
