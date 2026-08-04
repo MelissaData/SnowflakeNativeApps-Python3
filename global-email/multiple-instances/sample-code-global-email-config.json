@@ -1,0 +1,38 @@
+{
+  "warehouse": "TEST_WAREHOUSE",
+  "database": "TESTDB",
+  "schema": "MULTI_INSTANCES_TEST",
+  "options": "VerifyMailBox:Premium,TimeToWait:5",
+  "output_table_fields": "RecordID,REQ_EMAIL,Results,EmailAddress,DeliverabilityConfidenceScore,TopLevelDomainName,DomainName",
+  "duplicate_check": "FALSE",
+  "instances": [
+    {
+      "app_name": "GLOBALEMAIL_INSTANCE_1",
+      "source_table": "IN_DB.IN_SCHEMA.EMAIL_INPUT_1",
+      "output_table_name": "POST_INST_1",
+      "order_by": "RecordID",
+      "limit": 100
+    },
+    {
+      "app_name": "GLOBALEMAIL_INSTANCE_2",
+      "source_table": "IN_DB.IN_SCHEMA.EMAIL_INPUT_2",
+      "output_table_name": "POST_INST_2",
+      "order_by": "RecordID",
+      "limit": 100
+    },
+    {
+      "app_name": "GLOBALEMAIL_INSTANCE_3",
+      "source_table": "IN_DB.IN_SCHEMA.EMAIL_INPUT_3",
+      "output_table_name": "POST_INST_3",
+      "order_by": "RecordID",
+      "limit": 100
+    },
+    {
+      "app_name": "GLOBALEMAIL_INSTANCE_4",
+      "source_table": "IN_DB.IN_SCHEMA.EMAIL_INPUT_4",
+      "output_table_name": "POST_INST_4",
+      "order_by": "RecordID",
+      "limit": 100
+    }
+  ]
+}
