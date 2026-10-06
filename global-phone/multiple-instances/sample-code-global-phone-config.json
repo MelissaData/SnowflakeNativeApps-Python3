@@ -1,0 +1,38 @@
+{
+  "warehouse": "TEST_WAREHOUSE",
+  "database": "TESTDB",
+  "schema": "MULTI_INSTANCES_TEST",
+  "options": "CallerId:true",
+  "output_table_fields": "RecordID,InPhoneNumber,InCountry,Results,PhoneNumber,Carrier",
+  "duplicate_check": "FALSE",
+  "instances": [
+    {
+      "app_name": "GLOBALPHONE_INSTANCE_1",
+      "source_table": "IN_DB.IN_SCHEMA.PHONE_INPUT_1",
+      "output_table_name": "POST_INST_1",
+      "order_by": "RecordID",
+      "limit": 100
+    },
+    {
+      "app_name": "GLOBALPHONE_INSTANCE_2",
+      "source_table": "IN_DB.IN_SCHEMA.PHONE_INPUT_2",
+      "output_table_name": "POST_INST_2",
+      "order_by": "RecordID",
+      "limit": 100
+    },
+    {
+      "app_name": "GLOBALPHONE_INSTANCE_3",
+      "source_table": "IN_DB.IN_SCHEMA.PHONE_INPUT_3",
+      "output_table_name": "POST_INST_3",
+      "order_by": "RecordID",
+      "limit": 100
+    },
+    {
+      "app_name": "GLOBALPHONE_INSTANCE_4",
+      "source_table": "IN_DB.IN_SCHEMA.PHONE_INPUT_4",
+      "output_table_name": "POST_INST_4",
+      "order_by": "RecordID",
+      "limit": 100
+    }
+  ]
+}
